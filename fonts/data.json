@@ -1,0 +1,18 @@
+{
+  "student": [
+    {
+      "id": 0,
+      "name": "abc",
+      "birthday": "2001-11-01",
+      "phone": "3432423432",
+      "hometown": "ifsdfsdf"
+    },
+    {
+      "id": 1,
+      "name": "abc",
+      "birthday": "2001-11-01",
+      "phone": "3432423432",
+      "hometown": "ifsdfsdf"
+    }
+  ]
+}

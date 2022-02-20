@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js.js"></script>
+</head>
+<body>
+<div class="form">
+    <h2>Student form</h2>
+    <form class="needs-validation" novalidate>
+        <div class="form-group mb-3">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" required
+                   maxlength="50">
+            <span id="name_error"></span>
+        </div>
+        <div class="form-group mb-3">
+            <label for="birthday">Birthday</label>
+            <input type="date" class="form-control" id="birthday" placeholder="Enter birthday" name="birthday"  asp-for="MyDate" asp-format="{dd-MM-yyyy}" required>
+            <span id="birthday_error"></span>
+        </div>
+        <div class="form-group mb-3">
+            <label for="phone">Mobie phone</label>
+            <input type="number" class="form-control" id="phone" placeholder="Enter phone" name="phone" required>
+            <span id="phone_error"></span>
+        </div>
+        <div class="form-group mb-5">
+            <label for="hometown">Hometown</label>
+            <input type="text" class="form-control" id="hometown" placeholder="Enter hometown" name="hometown" required>
+            <span id="hometown_error"></span>
+        </div>
+        <button type="button" class="btn btn-primary" id="save-button" >Save</button>
+        <button type="button" class="btn btn-primary" id="save-reset">Reset</button>
+    </form>
+</div>
+<button class="btn btn-primary" id="delete" disabled>Delete</button>
+<button class="btn btn-primary" id="edit" disabled>Edit</button>
+<table class="table table-striped table-dark" id="table-data">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Birthday</th>
+        <th scope="col">Mobile phone</th>
+        <th scope="col">Hometown</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+
+</body>
+</html>
