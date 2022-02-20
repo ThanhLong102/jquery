@@ -105,6 +105,7 @@ $(document).ready(function () {
                     let index = checkbox.value;
                     let rowData = $('#table-data').find('tr#' + index);
                     rowData.remove();
+                    list.splice(index,1);
                 }
             }
         }
@@ -138,7 +139,6 @@ $(document).ready(function () {
         clearForm();
     }
 
-
     const countChecked = () => {
         let count = 0;
         for (const checkbox of document.querySelectorAll('input[type="checkbox"]')) {
@@ -160,11 +160,11 @@ $(document).ready(function () {
         phone = String(phone);
         birthday = String(birthday)
         hometown = String(hometown)
-        if (name === '' || name.length > 8) {
+        if (name === '' || name.length > 50) {
             if (name === '') {
                 document.getElementById('name_error').innerHTML = "Xin mời nhập tên";
             } else {
-                document.getElementById('name_error').innerHTML = "Tên phải ít hơn 8 kí tự";
+                document.getElementById('name_error').innerHTML = "Tên phải ít hơn 50 kí tự";
             }
             check = true;
         } else {
