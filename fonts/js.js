@@ -105,7 +105,7 @@ $(document).ready(function () {
                     let index = checkbox.value;
                     let rowData = $('#table-data').find('tr#' + index);
                     rowData.remove();
-                    list.splice(index,1);
+                    list.splice(index, 1);
                 }
             }
         }
@@ -174,11 +174,16 @@ $(document).ready(function () {
             if (birthday === '') {
                 document.getElementById('birthday_error').innerHTML = "Xin mời nhập ngày sinh";
             } else {
-                document.getElementById('birthday_error').innerHTML = "Ngày sinh phải lớn hơn ngày hiện tại";
+                document.getElementById('birthday_error').innerHTML = "Ngày sinh phải nhỏ hơn ngày hiện tại";
             }
             check = true;
         } else {
-            document.getElementById('birthday_error').innerHTML = "";
+            if (new Date().getFullYear() - new Date(birthday).getFullYear() >= 100) {
+                document.getElementById('birthday_error').innerHTML = "Ngày sinh không vượt quá 100 tuổi";
+                check = true;
+            } else {
+                document.getElementById('birthday_error').innerHTML = "";
+            }
         }
         if (phone === '' || phone.length !== 10) {
             if (phone === '') {
